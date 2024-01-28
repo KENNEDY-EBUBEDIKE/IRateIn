@@ -21,6 +21,8 @@ SECRET_KEY = config('SECRET_KEY')
 # Application definition
 
 DJANGO_COMMON_APPS = [
+    "daphne",
+    "channels",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -32,6 +34,7 @@ DJANGO_COMMON_APPS = [
 
 LOCALLY_CREATED_APPS = [
     'apps.users',
+    'apps.chat',
 ]
 
 
@@ -73,6 +76,7 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = "config.asgi.application"
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
@@ -146,4 +150,13 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ],
 
+}
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
 }
