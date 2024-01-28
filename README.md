@@ -1,2 +1,2 @@
-# NAUB-NEW-SERVER
-Rebuild of the NAUB RFID project Using Angular 13 and Django
+# IRateIn Assessment Project SERVER
+The server side of the IRateIn assessment project
