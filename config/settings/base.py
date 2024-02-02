@@ -23,6 +23,7 @@ SECRET_KEY = config('SECRET_KEY')
 DJANGO_COMMON_APPS = [
     "daphne",
     "channels",
+    'channels_auth_token_middlewares',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -115,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Lagos'
 
 USE_I18N = True
 

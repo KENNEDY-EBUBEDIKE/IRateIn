@@ -59,7 +59,7 @@ def sign_up(request):
             return Response(
                 data={
                     "success": False,
-                    "message": e.args[0],
+                    "error": e.args[0],
 
                 },
                 status=status.HTTP_200_OK
