@@ -97,6 +97,7 @@ Use the chat_id to create a chat room
 If chat room loads, fetch the previous chats from the server.
 When sender sends a message, save the msg to the database and broadcast to the chat room.
 when ws conn is established, get msgs recd by req.user that are unread and mark as read.
-Use the inbox opening to establish notification connection.
-
+Use the inbox opening to establish notification connection using the user_id.
+onSave of any msg with the user as the receiver, push notification to that user's notification channel
+Then the user updates the inbox chats onrecv of the notification.
 """
