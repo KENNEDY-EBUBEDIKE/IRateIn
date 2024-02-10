@@ -16,20 +16,20 @@ def get_chats(request):
     chats_data = []
 
     for chat in user_chats:
-        if chat.messages.first():
-            other_participant = chat.participants.exclude(id=request.user.id).first()
-            last_message = chat.messages.first()
-            unread_mgs = chat.messages.exclude(sender=request.user).exclude(is_read=True).count()
-            chat_info = {
-                'chat_id': chat.id,
-                'user_id': request.user.id,
-                'participant': UserSerializer(other_participant).data,
-                'last_message': ChatMessageSerializer(last_message).data,
-                'unread_mgs': unread_mgs,
-            }
-            chats_data.append(chat_info)
-        else:
-            continue
+        # if chat.messages.first():
+        other_participant = chat.participants.exclude(id=request.user.id).first()
+        last_message = chat.messages.first()
+        unread_mgs = chat.messages.exclude(sender=request.user).exclude(is_read=True).count()
+        chat_info = {
+            'chat_id': chat.id,
+            'user_id': request.user.id,
+            'participant': UserSerializer(other_participant).data,
+            'last_message': ChatMessageSerializer(last_message).data,
+            'unread_mgs': unread_mgs,
+        }
+        chats_data.append(chat_info)
+        # else:
+        #     continue
     return Response(
         {
             "success": True,
@@ -90,6 +90,7 @@ def create_chat(request):
                 "chat": ChatSerializer(chat).data,
             },
             status=status.HTTP_200_OK)
+
 
 """
 For Chats:
