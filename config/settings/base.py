@@ -128,10 +128,10 @@ AUTH_USER_MODEL = 'users.User'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_ROOT = '/home/iratein/cyber-security.iratein.com/static/'
+STATIC_ROOT = BASE_DIR / '../static'
 
 # Normal static files folder
-STATICFILES_DIRS = [BASE_DIR / '../static']
+# STATICFILES_DIRS = [BASE_DIR / '../static']
 
 # Static files Url
 STATIC_URL = '/static/'

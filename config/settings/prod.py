@@ -7,7 +7,7 @@ ALLOWED_HOSTS = [
 ]
 
 # *****  MEDIA FILES SETTINGS *****
-# MEDIA_ROOT = '/home/iratein/cyber-security.iratein.com/media/'
+MEDIA_ROOT = BASE_DIR / '../media'
 
 CORS_ALLOWED_ORIGINS = [
     'https://iratein.vercel.app',
