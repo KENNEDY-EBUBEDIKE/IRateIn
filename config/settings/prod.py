@@ -2,20 +2,23 @@ from config.settings.base import *
 
 DEBUG = False
 ALLOWED_HOSTS = [
-    'iratein.vercel.app',
-    'www.iratein.vercel.app',
+    '*',
+    # 'iratein.vercel.app',
+    # 'www.iratein.vercel.app',
 ]
 
 # *****  MEDIA FILES SETTINGS *****
 MEDIA_ROOT = BASE_DIR / '../media'
 
-CORS_ALLOWED_ORIGINS = [
-    'https://iratein.vercel.app',
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://iratein.vercel.app',
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'https://iratein.vercel.app',
+# ]
+#
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://iratein.vercel.app',
+# ]
 
 # HTTP verbs that are allowed
 CORS_ALLOW_METHODS = [
